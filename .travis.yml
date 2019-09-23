@@ -1,0 +1,13 @@
+sudo: required
+services:
+    - docker
+
+before_install:
+    - docker build -t  NishM/Docker-react -f Dockerfile.dev .    
+
+script:
+    - docker run  NishM/Docker-react npm run test -- --coverage
+
+
+
+     
